@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+require('dotenv').config({ path: 'config/dev.env' });
 mongoose.connect(process.env.MONGODB_URL, {    // Here the mongoose npm module connects with the mongoDB and creates a database named 'task-manager-api'
     useNewUrlParser: true,
     useCreateIndex:true,
@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URL, {    // Here the mongoose npm module c
 //     age : 27
 // })
 
-// me.save().then(() => {       // Saving the 'me' created new model to the 'User' collection of the 'task-manager-api'
+// me.save().then(() => {       // Swaving the 'me' created new model to the 'User' collection of the 'task-manager-api'
 //     return console.log(me);
 // }).catch((error) => {
 //     return console.log(error);
