@@ -61,7 +61,7 @@ router.get('/tasks', auth, async (req,res) => {
     }
 
     if(req.query.sortBy){   // Checking if the url has a query string with key value as 'sortBy' like '/tasks?sortBy='desc'' or '/tasks?sortBy='asc''        
-        const parts = req.query.sortBy.split(':');  // Using the ':' delimiter to split the string value inside the 'req.query.sortBy' string and setting it to an array which is stored in the 'parts' constant here
+        const parts = req.query.sortBy.split(':').then((req,res) =>{});  // Using the ':' delimiter to split the string value inside the 'req.query.sortBy' string and setting it to an array which is stored in the 'parts' constant here
         sort[parts[0]] = parts[1] === 'desc' ? -1:1; // Now creating a new property in the 'sory' object literal that will be the first element in the 'parts' array and setting its value to either -1 or 1 based on the whether the first element in the 'parts' array has a string value equal to 'desc' (which sets the sort[parts[0]] value to -1(integer value)) or any other value (which sets the sort[parts[0]] value to 1 (integer value))
     }
 
